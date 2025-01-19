@@ -4,13 +4,13 @@
 <title>Valentine's Day Letter</title>
 <style>
 body {
-  background-color: #f0e68c;
-  font-family: 'Arial', sans-serif;
+  background-color: #ffc0cb;
+  font-family: 'Times New Roman', sans-serif;
 }
 
 .container {
-  width: 400px;
-  height: 300px;
+  width: 500px;
+  height: 600px;
   margin: 50px auto;
   perspective: 800px;
 }
@@ -64,7 +64,7 @@ body {
   content: "";
   position: absolute;
   background-color: red;
-  border-radius: 50%;
+  border-radius: 500%;
 }
 
 .heart::before {
@@ -84,7 +84,7 @@ body {
 }
 
 @keyframes openLetter {
-  0% { transform: rotateY(50deg); }
+  0% { transform: rotateY(0deg); }
   100% { transform: rotateY(-180deg); } /* Adjusted rotation */
 }
 
@@ -102,8 +102,8 @@ body {
       <div class="heart"></div>
     </div>
     <div class="letter-back">
-      <h1>Hi lovey Marie ❤️</h1>
-      <p>Will you be my valentine this coming february 14? mwehehehe </p>
+      <h1>Hi lovey Marie! ❤️</h1>
+      <h1>Will you be my valentine this coming february 14? mwehehehe </p> YES or YES </p> </p> </p> ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
     </div>
   </div>
 </div>
