@@ -103,7 +103,7 @@ body {
     </div>
     <div class="letter-back">
       <h1>Hi lovey Marie ❤️</h1>
-      <p>Will you be my Valentine? this coming february 14 mwehehehe </p>
+      <p>Will you be my valentine this coming february 14? mwehehehe </p>
     </div>
   </div>
 </div>
