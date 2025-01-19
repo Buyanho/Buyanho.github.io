@@ -1,60 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5f5f5;
-            font-family: 'Arial', sans-serif;
-        }
-        .valentine {
-            text-align: center;
-            font-size: 2rem;
-            color: #e91e63;
-        }
-        .heart {
-            width: 100px;
-            height: 90px;
-            position: relative;
-            margin: 20px auto;
-            animation: beat 1s infinite;
-        }
-        .heart::before,
-        .heart::after {
-            content: '';
-            width: 100px;
-            height: 150px;
-            background: #e91e63;
-            position: absolute;
-            border-radius: 100px 100px 0 0;
-            transform: rotate(-45deg);
-            transform-origin: 0 100%;
-        }
-        .heart::after {
-            left: 100px;
-            transform: rotate(45deg);
-            transform-origin: 100% 100%;
-        }
-        @keyframes beat {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-        }
-    </style>
-    <title>Valentine Letter</title>
+<title>Valentine's Day Letter</title>
+<style>
+body {
+  background-color: #f0e68c;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  width: 400px;
+  height: 300px;
+  margin: 50px auto;
+  perspective: 800px;
+}
+
+.letter {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border: 2px solid #c0c0c0;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: 50% 100%; /* Corrected transform origin */
+  animation: openLetter 1s ease-in-out forwards;
+}
+
+.letter-front {
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.letter-back {
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.heart {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: beat 1s infinite ease-in-out;
+  z-index: 1; /* Ensure heart is on top */
+}
+
+.heart::before, .heart::after {
+  content: "";
+  position: absolute;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 0;
+  transform: rotate(100deg);
+}
+
+.heart::after {
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 0;
+  transform: rotate(50deg);
+}
+
+@keyframes openLetter {
+  0% { transform: rotateY(50deg); }
+  100% { transform: rotateY(-180deg); } /* Adjusted rotation */
+}
+
+@keyframes beat {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.1); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+</style>
 </head>
 <body>
-    <div class="valentine">
-        <div class="heart"></div>
-        <p>Hi loveeeeeeeeeeeeeeyyyyy Marie, will you be my valentine this coming feb 14? mwehehehe ❤️</p>
+<div class="container">
+  <div class="letter">
+    <div class="letter-front">
+      <div class="heart"></div>
     </div>
+    <div class="letter-back">
+      <h1>Hi lovey Marie ❤️</h1>
+      <p>Will you be my Valentine? this coming february 14 mwehehehe </p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
